@@ -1,0 +1,116 @@
+
+// Slide
+//
+
+@slide-duration: .3s;
+@slide-timing-function: ease-in-out;
+
+.am-slide-top {
+
+  animation-duration: @slide-duration;
+  animation-timing-function: @slide-timing-function;
+  animation-fill-mode: backwards;
+
+  &.ng-enter, &.am-fade-and-slide-top-add {
+    animation-name: slideFromTop;
+  }
+  &.ng-leave, &.am-fade-and-slide-top-remove, &.ng-hide {
+    animation-name: slideToTop;
+  }
+
+}
+
+.am-slide-right {
+
+  animation-duration: @slide-duration;
+  animation-timing-function: @slide-timing-function;
+  animation-fill-mode: backwards;
+
+  &.ng-enter, &.am-fade-and-slide-right-add {
+    animation-name: slideFromRight;
+  }
+  &.ng-leave, &.am-fade-and-slide-right-remove, &.ng-hide {
+    animation-name: slideToRight;
+  }
+
+}
+
+.am-slide-bottom {
+
+  animation-duration: @slide-duration;
+  animation-timing-function: @slide-timing-function;
+  animation-fill-mode: backwards;
+
+  &.ng-enter, &.am-fade-and-slide-bottom-add {
+    animation-name: slideFromBottom;
+  }
+  &.ng-leave, &.am-fade-and-slide-bottom-remove, &.ng-hide {
+    animation-name: slideToBottom;
+  }
+
+}
+
+.am-slide-left {
+
+  animation-duration: @slide-duration;
+  animation-timing-function: @slide-timing-function;
+  animation-fill-mode: backwards;
+
+  &.ng-enter, &.am-fade-and-slide-left-add {
+    animation-name: slideFromLeft;
+  }
+  &.ng-leave, &.am-fade-and-slide-left-remove, &.ng-hide {
+    animation-name: slideToLeft;
+  }
+
+}
+
+
+// Keyframes
+//
+
+@keyframes slideFromTop {
+  from {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes slideToTop {
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes slideFromRight {
+  from {
+    transform: translateX(100%);
+  }
+}
+@keyframes slideToRight {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes slideFromBottom {
+  from {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes slideToBottom {
+  to {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes slideFromLeft {
+  from {
+    transform: translateX(-100%);
+  }
+}
+@keyframes slideToLeft {
+  to {
+    transform: translateX(-100%);
+  }
+}

@@ -1,0 +1,79 @@
+
+
+// Fade
+//
+
+@flip-duration: .4s;
+@flip-timing-function: ease;
+
+.am-flip-x {
+
+  animation-duration: @flip-duration;
+  animation-timing-function: @flip-timing-function;
+  animation-fill-mode: backwards;
+
+  &.ng-enter, &.am-flip-x-add {
+    animation-name: flipInX;
+  }
+  &.ng-leave, &.am-flip-x-remove, &.ng-hide {
+    animation-name: flipOutX;
+  }
+
+}
+
+.am-flip-x-bounce {
+
+  animation-duration: @flip-duration;
+  animation-timing-function: @flip-timing-function;
+  animation-fill-mode: backwards;
+
+  &.ng-enter, &.am-flip-x-add {
+    animation-name: flipInXBounce;
+  }
+  &.ng-leave, &.am-flip-x-remove, &.ng-hide {
+    animation-name: flipOutX;
+  }
+
+}
+
+// Keyframes
+//
+
+@keyframes flipInX {
+  from {
+    opacity: 0;
+    transform: perspective(400px) rotateX(90deg);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(400px) rotateX(0deg);
+  }
+}
+
+@keyframes flipInXBounce {
+  from {
+    opacity: 0;
+    transform: perspective(400px) rotateX(90deg);
+  }
+  40% {
+    transform: perspective(400px) rotateX(-10deg);
+  }
+  70% {
+    transform: perspective(400px) rotateX(10deg);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(400px) rotateX(0deg);
+  }
+}
+
+@keyframes flipOutX {
+  from {
+    opacity: 1;
+    transform: perspective(400px) rotateX(0deg);
+  }
+  to {
+    opacity: 0;
+    transform: perspective(400px) rotateX(90deg);
+  }
+}
