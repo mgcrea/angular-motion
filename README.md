@@ -1,6 +1,6 @@
 # [AngularMotion](http://mgcrea.github.io/angular-motion) [![Build Status](https://secure.travis-ci.org/mgcrea/angular-motion.png?branch=master)](http://travis-ci.org/#!/mgcrea/angular-motion) [![Dependency Status](https://gemnasium.com/mgcrea/angular-motion.png)](https://gemnasium.com/mgcrea/angular-motion) [![Analytics](https://ga-beacon.appspot.com/UA-1813303-10/angular-motion/readme?pixel)](https://github.com/igrigorik/ga-beacon)
 
-[![Banner](http://mgcrea.github.io/angular-motion/images/6af654d7.snippet.png)](http://mgcrea.github.io/angular-motion)
+[![Banner](http://mgcrea.github.io/angular-motion/images/snippet.png)](http://mgcrea.github.io/angular-motion)
 
 AngularMotion is an animation starter-kit built for [AngularJS 1.2.0+](https://github.com/angular/angular.js).
 

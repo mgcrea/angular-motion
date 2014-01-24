@@ -169,7 +169,7 @@ module.exports = function (grunt) {
       },
       docs: {
         options: {
-          cleancss: true
+          cleancss: false
         },
         files: [{
           expand: true,
@@ -200,11 +200,9 @@ module.exports = function (grunt) {
     // concat, minify and revision files. Creates configurations in memory so
     // additional tasks can operate on them
     useminPrepare: {
+      html: '<%= yo.docs %>/index.html',
       options: {
         dest: '<%= yo.pages %>'
-      },
-      docs: {
-        html: '<%= yo.docs %>/index.html'
       }
     },
 
@@ -367,6 +365,30 @@ module.exports = function (grunt) {
       }
     },
 
+    ngtemplates:  {
+      docs: {
+        options:  {
+          module: 'mgcrea.ngMotionDocs',
+          usemin: 'scripts/docs.tpl.min.js'
+        },
+        files: [{
+          cwd: '<%= yo.src %>',
+          src: '{,*/}docs/*.html',
+          dest: '.tmp/ngtemplates/src-docs.tpl.js'
+        },
+        {
+          cwd: '<%= yo.docs %>',
+          src: 'views/sidebar.html',
+          dest: '.tmp/ngtemplates/docs-views.tpl.js'
+        },
+        {
+          cwd: '<%= yo.docs %>',
+          src: 'views/partials/{,*/}*.html',
+          dest: '.tmp/ngtemplates/docs-partials.tpl.js'
+        }]
+      }
+    },
+
     // Test settings
     karma: {
       options: {
@@ -381,6 +403,16 @@ module.exports = function (grunt) {
       },
       server: {
         autoWatch: true
+      }
+    },
+
+    uglify: {
+      generated: {
+        options: {
+          compress: false,
+          mangle: false,
+          beautify: true
+        }
       }
     }
 
@@ -403,9 +435,6 @@ module.exports = function (grunt) {
 
   grunt.registerTask('test', [
     'clean:server',
-    // 'concurrent:test',
-    // 'autoprefixer',
-    'ngtemplates:test',
     'connect:test',
     'karma:unit'
   ]);
@@ -421,11 +450,10 @@ module.exports = function (grunt) {
   grunt.registerTask('docs', [
     'clean:docs',
     'useminPrepare',
-    // 'concurrent:docs',
+    'less:dev',
     'less:docs',
     'autoprefixer',
     'nginclude:docs',
-    'ngtemplates:test',
     'ngtemplates:docs',
     'concat:generated',
     'ngmin:docs',
@@ -433,7 +461,6 @@ module.exports = function (grunt) {
     'cssmin:generated',
     'uglify:generated',
     'concat:docs',
-    'copy:static',
     'usemin',
     // 'htmlmin:docs' // breaks code preview
   ]);
