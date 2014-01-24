@@ -33,7 +33,7 @@ module.exports = function (grunt) {
       ' * <%= pkg.name %>\n' +
       ' * @version v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %>\n' +
       ' * @link <%= pkg.homepage %>\n' +
-      ' * @author <%= pkg.author %>\n' +
+      ' * @author <%= pkg.author.name %> <<%= pkg.author.email %>>\n' +
       ' * @license MIT License, http://www.opensource.org/licenses/MIT\n' +
       ' */\n'
     },
@@ -141,6 +141,7 @@ module.exports = function (grunt) {
         },
         files: [{
           expand: true,
+          flatten: true,
           cwd: '<%= yo.src %>/',
           src: '{,*/}*.less',
           dest: '.tmp/styles/modules/',
@@ -148,12 +149,6 @@ module.exports = function (grunt) {
         }, {
           src: '<%= yo.src %>/{,*/}*.less',
           dest: '.tmp/styles/<%= bower.name %>.css',
-        }, {
-          expand: true,
-          cwd: '<%= yo.docs %>/styles/',
-          src: '*.less',
-          dest: '.tmp/styles/',
-          ext: '.css'
         }]
       },
       dist: {
@@ -162,6 +157,7 @@ module.exports = function (grunt) {
         },
         files: [{
           expand: true,
+          flatten: true,
           cwd: '<%= yo.src %>/',
           src: '{,*/}*.less',
           dest: '.tmp/styles/modules/',
@@ -169,6 +165,18 @@ module.exports = function (grunt) {
         }, {
           src: '<%= yo.src %>/{,*/}*.less',
           dest: '.tmp/styles/<%= bower.name %>.min.css',
+        }]
+      },
+      docs: {
+        options: {
+          cleancss: true
+        },
+        files: [{
+          expand: true,
+          cwd: '<%= yo.docs %>/styles/',
+          src: '*.less',
+          dest: '.tmp/styles/',
+          ext: '.css'
         }]
       }
     },
@@ -240,16 +248,12 @@ module.exports = function (grunt) {
 
     // Copies remaining files to places other tasks can use
     copy: {
-      static: {
+      dist: {
         files: [{
           expand: true,
-          cwd: '<%= yo.pages %>',
-          dest: '<%= yo.pages %>/static',
-          src: [
-            'images/{,*/}*.png',
-            'scripts/{,*/}*.js',
-            'styles/{,*/}*.css'
-          ]
+          cwd: '.tmp/styles/',
+          dest: '<%= yo.dist %>',
+          src: '{,*/}*.css'
         }]
       },
       docs: {
@@ -318,7 +322,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yo.dist %>',
-          src: '{,*/}*.js',
+          src: '{,*/}*.{js,css}',
           dest: '<%= yo.dist %>'
         }]
       },
@@ -408,11 +412,9 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
-    'ngtemplates:dist',
-    'concat:dist',
-    'ngmin:dist',
-    'ngmin:modules',
-    'uglify:dist',
+    'less:dev',
+    'less:dist',
+    'copy:dist',
     'concat:banner'
   ]);
 
