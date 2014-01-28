@@ -18,6 +18,17 @@
     animation-name: fadeAndScaleOut;
   }
 
+  &.ng-enter {
+    visibility: hidden;
+    animation-name: fadeAndScaleIn;
+    &.ng-enter-active {
+      visibility: visible;
+    }
+  }
+  &.ng-leave {
+    animation-name: fadeAndScaleOut;
+  }
+
 }
 
 

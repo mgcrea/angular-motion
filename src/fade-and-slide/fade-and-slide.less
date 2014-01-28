@@ -11,10 +11,21 @@
   animation-timing-function: @fade-and-slide-timing-function;
   animation-fill-mode: backwards;
 
-  &.ng-enter, &.am-fade-and-slide-top-add {
+  &.am-fade-and-slide-top-add {
     animation-name: fadeAndSlideFromTop;
   }
-  &.ng-leave, &.am-fade-and-slide-top-remove, &.ng-hide {
+  &.am-fade-and-slide-top-remove, &.ng-hide {
+    animation-name: fadeAndSlideToTop;
+  }
+
+  &.ng-enter {
+    visibility: hidden;
+    animation-name: fadeAndSlideFromTop;
+    &.ng-enter-active {
+      visibility: visible;
+    }
+  }
+  &.ng-leave {
     animation-name: fadeAndSlideToTop;
   }
 
@@ -26,10 +37,21 @@
   animation-timing-function: @fade-and-slide-timing-function;
   animation-fill-mode: backwards;
 
-  &.ng-enter, &.am-fade-and-slide-right-add {
+  &.am-fade-and-slide-right-add {
     animation-name: fadeAndSlideFromRight;
   }
-  &.ng-leave, &.am-fade-and-slide-right-remove, &.ng-hide {
+  &.am-fade-and-slide-right-remove, &.ng-hide {
+    animation-name: fadeAndSlideToRight;
+  }
+
+  &.ng-enter {
+    visibility: hidden;
+    animation-name: fadeAndSlideFromRight;
+    &.ng-enter-active {
+      visibility: visible;
+    }
+  }
+  &.ng-leave {
     animation-name: fadeAndSlideToRight;
   }
 
@@ -41,10 +63,21 @@
   animation-timing-function: @fade-and-slide-timing-function;
   animation-fill-mode: backwards;
 
-  &.ng-enter, &.am-fade-and-slide-bottom-add {
+  &.am-fade-and-slide-bottom-add {
     animation-name: fadeAndSlideFromBottom;
   }
-  &.ng-leave, &.am-fade-and-slide-bottom-remove, &.ng-hide {
+  &.am-fade-and-slide-bottom-remove, &.ng-hide {
+    animation-name: fadeAndSlideToBottom;
+  }
+
+  &.ng-enter {
+    visibility: hidden;
+    animation-name: fadeAndSlideFromBottom;
+    &.ng-enter-active {
+      visibility: visible;
+    }
+  }
+  &.ng-leave {
     animation-name: fadeAndSlideToBottom;
   }
 
@@ -56,11 +89,22 @@
   animation-timing-function: @fade-and-slide-timing-function;
   animation-fill-mode: backwards;
 
-  &.ng-enter, &.am-fade-and-slide-left-add {
+  &.am-fade-and-slide-left-add {
     animation-fill-mode: backwards;
     animation-name: fadeAndSlideFromLeft;
   }
-  &.ng-leave, &.am-fade-and-slide-left-remove, &.ng-hide {
+  &.am-fade-and-slide-left-remove, &.ng-hide {
+    animation-name: fadeAndSlideToLeft;
+  }
+
+  &.ng-enter {
+    visibility: hidden;
+    animation-name: fadeAndSlideFromLeft;
+    &.ng-enter-active {
+      visibility: visible;
+    }
+  }
+  &.ng-leave {
     animation-name: fadeAndSlideToLeft;
   }
 

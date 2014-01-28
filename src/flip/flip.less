@@ -12,10 +12,21 @@
   animation-timing-function: @flip-timing-function;
   animation-fill-mode: backwards;
 
-  &.ng-enter, &.am-flip-x-add {
+  &.am-flip-x-add {
     animation-name: flipInX;
   }
-  &.ng-leave, &.am-flip-x-remove, &.ng-hide {
+  &.am-flip-x-remove, &.ng-hide {
+    animation-name: flipOutX;
+  }
+
+  &.ng-enter {
+    visibility: hidden;
+    animation-name: flipInX;
+    &.ng-enter-active {
+      visibility: visible;
+    }
+  }
+  &.ng-leave {
     animation-name: flipOutX;
   }
 
@@ -27,10 +38,21 @@
   animation-timing-function: @flip-timing-function;
   animation-fill-mode: backwards;
 
-  &.ng-enter, &.am-flip-x-add {
+  &.am-flip-x-add {
     animation-name: flipInXBounce;
   }
-  &.ng-leave, &.am-flip-x-remove, &.ng-hide {
+  &.am-flip-x-remove, &.ng-hide {
+    animation-name: flipOutX;
+  }
+
+  &.ng-enter {
+    visibility: hidden;
+    animation-name: flipInXBounce;
+    &.ng-enter-active {
+      visibility: visible;
+    }
+  }
+  &.ng-leave {
     animation-name: flipOutX;
   }
 

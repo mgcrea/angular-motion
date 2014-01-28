@@ -11,10 +11,21 @@
   animation-timing-function: @slide-timing-function;
   animation-fill-mode: backwards;
 
-  &.ng-enter, &.am-fade-and-slide-top-add {
+  &.am-fade-and-slide-top-add {
     animation-name: slideFromTop;
   }
-  &.ng-leave, &.am-fade-and-slide-top-remove, &.ng-hide {
+  &.am-fade-and-slide-top-remove, &.ng-hide {
+    animation-name: slideToTop;
+  }
+
+  &.ng-enter {
+    visibility: hidden;
+    animation-name: slideFromTop;
+    &.ng-enter-active {
+      visibility: visible;
+    }
+  }
+  &.ng-leave,  {
     animation-name: slideToTop;
   }
 
@@ -26,10 +37,21 @@
   animation-timing-function: @slide-timing-function;
   animation-fill-mode: backwards;
 
-  &.ng-enter, &.am-fade-and-slide-right-add {
+  &.am-fade-and-slide-right-add {
     animation-name: slideFromRight;
   }
-  &.ng-leave, &.am-fade-and-slide-right-remove, &.ng-hide {
+  &.am-fade-and-slide-right-remove, &.ng-hide {
+    animation-name: slideToRight;
+  }
+
+  &.ng-enter {
+    visibility: hidden;
+    animation-name: slideFromRight;
+    &.ng-enter-active {
+      visibility: visible;
+    }
+  }
+  &.ng-leave,  {
     animation-name: slideToRight;
   }
 
@@ -41,10 +63,21 @@
   animation-timing-function: @slide-timing-function;
   animation-fill-mode: backwards;
 
-  &.ng-enter, &.am-fade-and-slide-bottom-add {
+  &.am-fade-and-slide-bottom-add {
     animation-name: slideFromBottom;
   }
-  &.ng-leave, &.am-fade-and-slide-bottom-remove, &.ng-hide {
+  &.am-fade-and-slide-bottom-remove, &.ng-hide {
+    animation-name: slideToBottom;
+  }
+
+  &.ng-enter {
+    visibility: hidden;
+    animation-name: slideFromBottom;
+    &.ng-enter-active {
+      visibility: visible;
+    }
+  }
+  &.ng-leave,  {
     animation-name: slideToBottom;
   }
 
@@ -56,10 +89,21 @@
   animation-timing-function: @slide-timing-function;
   animation-fill-mode: backwards;
 
-  &.ng-enter, &.am-fade-and-slide-left-add {
+  &.am-fade-and-slide-left-add {
     animation-name: slideFromLeft;
   }
-  &.ng-leave, &.am-fade-and-slide-left-remove, &.ng-hide {
+  &.am-fade-and-slide-left-remove, &.ng-hide {
+    animation-name: slideToLeft;
+  }
+
+  &.ng-enter {
+    visibility: hidden;
+    animation-name: slideFromLeft;
+    &.ng-enter-active {
+      visibility: visible;
+    }
+  }
+  &.ng-leave,  {
     animation-name: slideToLeft;
   }
 
