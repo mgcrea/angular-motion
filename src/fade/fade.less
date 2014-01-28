@@ -12,10 +12,21 @@
   animation-fill-mode: backwards;
   opacity: 1;
 
-  &.ng-enter, &.am-fade-add {
+  &.am-fade-add, &.ng-hide-remove, &.ng-move  {
     animation-name: fadeIn;
   }
-  &.ng-leave, &.am-fade-remove, &.ng-hide {
+  &.am-fade-remove, &.ng-hide {
+    animation-name: fadeOut;
+  }
+
+  &.ng-enter {
+    visibility: hidden;
+    animation-name: fadeIn;
+    &.ng-enter-active {
+      visibility: visible;
+    }
+  }
+  &.ng-leave {
     animation-name: fadeOut;
   }
 
