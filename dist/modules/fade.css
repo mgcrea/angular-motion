@@ -6,29 +6,44 @@
  * @license MIT License, http://www.opensource.org/licenses/MIT
  */
 .am-fade {
+  -webkit-animation-duration: 0.3s;
   animation-duration: 0.3s;
+  -webkit-animation-timing-function: linear;
   animation-timing-function: linear;
+  -webkit-animation-fill-mode: backwards;
   animation-fill-mode: backwards;
   opacity: 1;
 }
 .am-fade.am-fade-add,
 .am-fade.ng-hide-remove,
 .am-fade.ng-move {
+  -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
 }
 .am-fade.am-fade-remove,
 .am-fade.ng-hide {
+  -webkit-animation-name: fadeOut;
   animation-name: fadeOut;
 }
 .am-fade.ng-enter {
   visibility: hidden;
+  -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
 }
 .am-fade.ng-enter.ng-enter-active {
   visibility: visible;
 }
 .am-fade.ng-leave {
+  -webkit-animation-name: fadeOut;
   animation-name: fadeOut;
+}
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 @keyframes fadeIn {
   from {
@@ -36,6 +51,14 @@
   }
   to {
     opacity: 1;
+  }
+}
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }
 @keyframes fadeOut {
@@ -46,12 +69,28 @@
     opacity: 0;
   }
 }
+@-webkit-keyframes fadeHalfIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: .5;
+  }
+}
 @keyframes fadeHalfIn {
   from {
     opacity: 0;
   }
   to {
     opacity: .5;
+  }
+}
+@-webkit-keyframes fadeHalfOut {
+  from {
+    opacity: .5;
+  }
+  to {
+    opacity: 0;
   }
 }
 @keyframes fadeHalfOut {
@@ -64,12 +103,14 @@
 }
 .modal-backdrop .am-fade,
 .modal-backdrop .animation-fade {
+  -webkit-animation-duration: 0.15s;
   animation-duration: 0.15s;
 }
 .modal-backdrop .am-fade.ng-enter,
 .modal-backdrop .animation-fade.ng-enter,
 .modal-backdrop .am-fade.am-fade-add,
 .modal-backdrop .animation-fade.am-fade-add {
+  -webkit-animation-name: fadeHalfIn;
   animation-name: fadeHalfIn;
 }
 .modal-backdrop .am-fade.ng-leave,
@@ -78,5 +119,6 @@
 .modal-backdrop .animation-fade.am-fade-remove,
 .modal-backdrop .am-fade.ng-hide,
 .modal-backdrop .animation-fade.ng-hide {
+  -webkit-animation-name: fadeHalfOut;
   animation-name: fadeHalfOut;
 }
