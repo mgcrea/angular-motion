@@ -1,6 +1,6 @@
 /**
  * angular-motion
- * @version v0.3.0 - 2014-01-24
+ * @version v0.3.1 - 2014-01-29
  * @link https://github.com/mgcrea/angular-motion
  * @author Olivier Louvignes <olivier@mg-crea.com>
  * @license MIT License, http://www.opensource.org/licenses/MIT
@@ -10,13 +10,23 @@
   animation-timing-function: ease;
   animation-fill-mode: backwards;
 }
-.am-flip-x.ng-enter,
-.am-flip-x.am-flip-x-add {
+.am-flip-x.am-flip-x-add,
+.am-flip-x.ng-hide-remove,
+.am-flip-x.ng-move {
   animation-name: flipInX;
 }
-.am-flip-x.ng-leave,
 .am-flip-x.am-flip-x-remove,
 .am-flip-x.ng-hide {
+  animation-name: flipOutX;
+}
+.am-flip-x.ng-enter {
+  visibility: hidden;
+  animation-name: flipInX;
+}
+.am-flip-x.ng-enter.ng-enter-active {
+  visibility: visible;
+}
+.am-flip-x.ng-leave {
   animation-name: flipOutX;
 }
 .am-flip-x-bounce {
@@ -24,13 +34,23 @@
   animation-timing-function: ease;
   animation-fill-mode: backwards;
 }
-.am-flip-x-bounce.ng-enter,
-.am-flip-x-bounce.am-flip-x-add {
+.am-flip-x-bounce.am-flip-x-add,
+.am-flip-x-bounce.ng-hide-remove,
+.am-flip-x-bounce.ng-move {
   animation-name: flipInXBounce;
 }
-.am-flip-x-bounce.ng-leave,
 .am-flip-x-bounce.am-flip-x-remove,
 .am-flip-x-bounce.ng-hide {
+  animation-name: flipOutX;
+}
+.am-flip-x-bounce.ng-enter {
+  visibility: hidden;
+  animation-name: flipInXBounce;
+}
+.am-flip-x-bounce.ng-enter.ng-enter-active {
+  visibility: visible;
+}
+.am-flip-x-bounce.ng-leave {
   animation-name: flipOutX;
 }
 @keyframes flipInX {

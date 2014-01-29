@@ -1,6 +1,6 @@
 /**
  * angular-motion
- * @version v0.3.0 - 2014-01-24
+ * @version v0.3.1 - 2014-01-29
  * @link https://github.com/mgcrea/angular-motion
  * @author Olivier Louvignes <olivier@mg-crea.com>
  * @license MIT License, http://www.opensource.org/licenses/MIT
@@ -11,13 +11,23 @@
   animation-fill-mode: backwards;
   opacity: 1;
 }
-.am-fade.ng-enter,
-.am-fade.am-fade-add {
+.am-fade.am-fade-add,
+.am-fade.ng-hide-remove,
+.am-fade.ng-move {
   animation-name: fadeIn;
 }
-.am-fade.ng-leave,
 .am-fade.am-fade-remove,
 .am-fade.ng-hide {
+  animation-name: fadeOut;
+}
+.am-fade.ng-enter {
+  visibility: hidden;
+  animation-name: fadeIn;
+}
+.am-fade.ng-enter.ng-enter-active {
+  visibility: visible;
+}
+.am-fade.ng-leave {
   animation-name: fadeOut;
 }
 @keyframes fadeIn {
