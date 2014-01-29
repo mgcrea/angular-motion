@@ -430,58 +430,10 @@
     opacity: 0;
   }
 }
-@-webkit-keyframes fadeHalfIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: .5;
-  }
-}
-@keyframes fadeHalfIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: .5;
-  }
-}
-@-webkit-keyframes fadeHalfOut {
-  from {
-    opacity: .5;
-  }
-  to {
-    opacity: 0;
-  }
-}
-@keyframes fadeHalfOut {
-  from {
-    opacity: .5;
-  }
-  to {
-    opacity: 0;
-  }
-}
-.modal-backdrop .am-fade,
-.modal-backdrop .animation-fade {
+.modal-backdrop.am-fade {
+  background: rgba(0, 0, 0, 0.5);
   -webkit-animation-duration: 0.15s;
   animation-duration: 0.15s;
-}
-.modal-backdrop .am-fade.ng-enter,
-.modal-backdrop .animation-fade.ng-enter,
-.modal-backdrop .am-fade.am-fade-add,
-.modal-backdrop .animation-fade.am-fade-add {
-  -webkit-animation-name: fadeHalfIn;
-  animation-name: fadeHalfIn;
-}
-.modal-backdrop .am-fade.ng-leave,
-.modal-backdrop .animation-fade.ng-leave,
-.modal-backdrop .am-fade.am-fade-remove,
-.modal-backdrop .animation-fade.am-fade-remove,
-.modal-backdrop .am-fade.ng-hide,
-.modal-backdrop .animation-fade.ng-hide {
-  -webkit-animation-name: fadeHalfOut;
-  animation-name: fadeHalfOut;
 }
 
 .am-flip-x {
@@ -495,8 +447,8 @@
 .am-flip-x.am-flip-x-add,
 .am-flip-x.ng-hide-remove,
 .am-flip-x.ng-move {
-  -webkit-animation-name: flipInX;
-  animation-name: flipInX;
+  -webkit-animation-name: flipInXBounce;
+  animation-name: flipInXBounce;
 }
 .am-flip-x.am-flip-x-remove,
 .am-flip-x.ng-hide {
@@ -505,8 +457,8 @@
 }
 .am-flip-x.ng-enter {
   visibility: hidden;
-  -webkit-animation-name: flipInX;
-  animation-name: flipInX;
+  -webkit-animation-name: flipInXBounce;
+  animation-name: flipInXBounce;
 }
 .am-flip-x.ng-enter.ng-enter-active {
   visibility: visible;
@@ -515,7 +467,7 @@
   -webkit-animation-name: flipOutX;
   animation-name: flipOutX;
 }
-.am-flip-x-bounce {
+.am-flip-x-linear {
   -webkit-animation-duration: 0.4s;
   animation-duration: 0.4s;
   -webkit-animation-timing-function: ease;
@@ -523,26 +475,26 @@
   -webkit-animation-fill-mode: backwards;
   animation-fill-mode: backwards;
 }
-.am-flip-x-bounce.am-flip-x-add,
-.am-flip-x-bounce.ng-hide-remove,
-.am-flip-x-bounce.ng-move {
-  -webkit-animation-name: flipInXBounce;
-  animation-name: flipInXBounce;
+.am-flip-x-linear.am-flip-x-add,
+.am-flip-x-linear.ng-hide-remove,
+.am-flip-x-linear.ng-move {
+  -webkit-animation-name: flipInX;
+  animation-name: flipInX;
 }
-.am-flip-x-bounce.am-flip-x-remove,
-.am-flip-x-bounce.ng-hide {
+.am-flip-x-linear.am-flip-x-remove,
+.am-flip-x-linear.ng-hide {
   -webkit-animation-name: flipOutX;
   animation-name: flipOutX;
 }
-.am-flip-x-bounce.ng-enter {
+.am-flip-x-linear.ng-enter {
   visibility: hidden;
-  -webkit-animation-name: flipInXBounce;
-  animation-name: flipInXBounce;
+  -webkit-animation-name: flipInX;
+  animation-name: flipInX;
 }
-.am-flip-x-bounce.ng-enter.ng-enter-active {
+.am-flip-x-linear.ng-enter.ng-enter-active {
   visibility: visible;
 }
-.am-flip-x-bounce.ng-leave {
+.am-flip-x-linear.ng-leave {
   -webkit-animation-name: flipOutX;
   animation-name: flipOutX;
 }

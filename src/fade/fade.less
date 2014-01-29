@@ -54,40 +54,15 @@
   }
 }
 
-@keyframes fadeHalfIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: .5;
-  }
-}
-
-@keyframes fadeHalfOut {
-  from {
-    opacity: .5;
-  }
-  to {
-    opacity: 0;
-  }
-}
-
-
 // Bootstrap 3
 //
 
 .modal-backdrop {
 
-  .am-fade, .animation-fade {
+  &.am-fade {
 
+    background: rgba(0, 0, 0, .5);
     animation-duration: @fade-duration / 2;
-
-    &.ng-enter, &.am-fade-add {
-      animation-name: fadeHalfIn;
-    }
-    &.ng-leave, &.am-fade-remove, &.ng-hide {
-      animation-name: fadeHalfOut;
-    }
 
   }
 

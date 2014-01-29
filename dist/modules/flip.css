@@ -16,8 +16,8 @@
 .am-flip-x.am-flip-x-add,
 .am-flip-x.ng-hide-remove,
 .am-flip-x.ng-move {
-  -webkit-animation-name: flipInX;
-  animation-name: flipInX;
+  -webkit-animation-name: flipInXBounce;
+  animation-name: flipInXBounce;
 }
 .am-flip-x.am-flip-x-remove,
 .am-flip-x.ng-hide {
@@ -26,8 +26,8 @@
 }
 .am-flip-x.ng-enter {
   visibility: hidden;
-  -webkit-animation-name: flipInX;
-  animation-name: flipInX;
+  -webkit-animation-name: flipInXBounce;
+  animation-name: flipInXBounce;
 }
 .am-flip-x.ng-enter.ng-enter-active {
   visibility: visible;
@@ -36,7 +36,7 @@
   -webkit-animation-name: flipOutX;
   animation-name: flipOutX;
 }
-.am-flip-x-bounce {
+.am-flip-x-linear {
   -webkit-animation-duration: 0.4s;
   animation-duration: 0.4s;
   -webkit-animation-timing-function: ease;
@@ -44,26 +44,26 @@
   -webkit-animation-fill-mode: backwards;
   animation-fill-mode: backwards;
 }
-.am-flip-x-bounce.am-flip-x-add,
-.am-flip-x-bounce.ng-hide-remove,
-.am-flip-x-bounce.ng-move {
-  -webkit-animation-name: flipInXBounce;
-  animation-name: flipInXBounce;
+.am-flip-x-linear.am-flip-x-add,
+.am-flip-x-linear.ng-hide-remove,
+.am-flip-x-linear.ng-move {
+  -webkit-animation-name: flipInX;
+  animation-name: flipInX;
 }
-.am-flip-x-bounce.am-flip-x-remove,
-.am-flip-x-bounce.ng-hide {
+.am-flip-x-linear.am-flip-x-remove,
+.am-flip-x-linear.ng-hide {
   -webkit-animation-name: flipOutX;
   animation-name: flipOutX;
 }
-.am-flip-x-bounce.ng-enter {
+.am-flip-x-linear.ng-enter {
   visibility: hidden;
-  -webkit-animation-name: flipInXBounce;
-  animation-name: flipInXBounce;
+  -webkit-animation-name: flipInX;
+  animation-name: flipInX;
 }
-.am-flip-x-bounce.ng-enter.ng-enter-active {
+.am-flip-x-linear.ng-enter.ng-enter-active {
   visibility: visible;
 }
-.am-flip-x-bounce.ng-leave {
+.am-flip-x-linear.ng-leave {
   -webkit-animation-name: flipOutX;
   animation-name: flipOutX;
 }
