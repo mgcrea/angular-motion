@@ -22,8 +22,7 @@
       "type": "MIT"
     }
   ],
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "grunt": "~0.4.2",
     "grunt-angular-templates": "~0.5.1",
@@ -47,7 +46,7 @@
     "grunt-usemin": "~2.0.2",
     "jshint-stylish": "~0.1.5",
     "karma-coverage": "~0.1.4",
-    "load-grunt-tasks": "~0.2.1"
+    "load-grunt-tasks": "~0.3.0"
   },
   "engines": {
     "node": ">=0.8.0"
