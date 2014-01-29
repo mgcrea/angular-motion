@@ -443,6 +443,7 @@ module.exports = function (grunt) {
     'clean:dist',
     'less:dev',
     'less:dist',
+    'autoprefixer',
     'copy:dist',
     'concat:banner'
   ]);

@@ -14,16 +14,15 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       'bower_components/angular/angular.js',
-      'bower_components/angular-animate/angular-animate.js',
       'bower_components/angular-mocks/angular-mocks.js',
-      'src/*.js',
+      'bower_components/angular-animate/angular-animate.js',
+      'src/{,*/}*.js',
       'bower_components/jquery/jquery.js',
       'test/spec/*.js'
     ],
 
-    // list of files to exclude
+    // list of files / patterns to exclude
     exclude: [
-
     ],
 
     // test results reporter to use
@@ -41,7 +40,7 @@ module.exports = function(config) {
     logLevel: config.LOG_INFO,
 
     // enable / disable watching file and executing tests whenever any file changes
-    autoWatch: true,
+    autoWatch: false,
 
     // Start these browsers, currently available:
     // - Chrome
