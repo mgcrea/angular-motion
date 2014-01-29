@@ -12,4 +12,4 @@ before_script:
   - date --rfc-2822
 
 script:
-  - grunt jshint test coveralls build
+  - grunt jshint test build
