@@ -22,12 +22,15 @@
       "type": "MIT"
     }
   ],
+  "main": [
+    "dist/angular-motion.min.css",
+  ],
   "dependencies": {
     "angular": "~1.2.10",
     "angular-animate": "~1.2.10"
   },
   "devDependencies": {
-    "bootstrap": "~3.0.3",
+    "bootstrap": "~3.1.0",
     "angular-mocks": "~1.2.10",
     "angular-strap": "~2.0.0",
     "fastclick": "~0.6.11"
