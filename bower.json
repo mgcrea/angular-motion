@@ -23,7 +23,7 @@
     }
   ],
   "main": [
-    "dist/angular-motion.min.css",
+    "dist/angular-motion.min.css"
   ],
   "dependencies": {
     "angular": "~1.2.10",
