@@ -1,4 +1,4 @@
-# [AngularMotion](http://mgcrea.github.io/angular-motion) [![Build Status](https://secure.travis-ci.org/mgcrea/angular-motion.png?branch=master)](http://travis-ci.org/#!/mgcrea/angular-motion) [![Dependency Status](https://gemnasium.com/mgcrea/angular-motion.png)](https://gemnasium.com/mgcrea/angular-motion) [![Analytics](https://ga-beacon.appspot.com/UA-1813303-10/angular-motion/readme?pixel)](https://github.com/igrigorik/ga-beacon)
+# [AngularMotion](http://mgcrea.github.io/angular-motion) [![Build Status](https://secure.travis-ci.org/mgcrea/angular-motion.svg?branch=master)](http://travis-ci.org/#!/mgcrea/angular-motion) [![devDependency Status](https://david-dm.org/mgcrea/angular-motion/dev-status.svg)](https://david-dm.org/mgcrea/angular-motion#info=devDependencies)
 
 [![Banner](http://mgcrea.github.io/angular-motion/images/snippet.png)](http://mgcrea.github.io/angular-motion)
 
