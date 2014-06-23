@@ -21,12 +21,18 @@
   &.ng-enter {
     visibility: hidden;
     animation-name: fadeAndSlideFromTop;
+    animation-play-state: paused;
     &.ng-enter-active {
       visibility: visible;
+      animation-play-state: running;
     }
   }
   &.ng-leave {
     animation-name: fadeAndSlideToTop;
+    animation-play-state: paused;
+    &.ng-leave-active {
+      animation-play-state: running;
+    }
   }
 
 }
@@ -47,12 +53,18 @@
   &.ng-enter {
     visibility: hidden;
     animation-name: fadeAndSlideFromRight;
+    animation-play-state: paused;
     &.ng-enter-active {
       visibility: visible;
+      animation-play-state: running;
     }
   }
   &.ng-leave {
     animation-name: fadeAndSlideToRight;
+    animation-play-state: paused;
+    &.ng-leave-active {
+      animation-play-state: running;
+    }
   }
 
 }
@@ -73,12 +85,18 @@
   &.ng-enter {
     visibility: hidden;
     animation-name: fadeAndSlideFromBottom;
+    animation-play-state: paused;
     &.ng-enter-active {
       visibility: visible;
+      animation-play-state: running;
     }
   }
   &.ng-leave {
     animation-name: fadeAndSlideToBottom;
+    animation-play-state: paused;
+    &.ng-leave-active {
+      animation-play-state: running;
+    }
   }
 
 }
@@ -100,12 +118,18 @@
   &.ng-enter {
     visibility: hidden;
     animation-name: fadeAndSlideFromLeft;
+    animation-play-state: paused;
     &.ng-enter-active {
       visibility: visible;
+      animation-play-state: running;
     }
   }
   &.ng-leave {
     animation-name: fadeAndSlideToLeft;
+    animation-play-state: paused;
+    &.ng-leave-active {
+      animation-play-state: running;
+    }
   }
 
 }

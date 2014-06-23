@@ -22,12 +22,18 @@
   &.ng-enter {
     visibility: hidden;
     animation-name: flipInXBounce;
+    animation-play-state: paused;
     &.ng-enter-active {
       visibility: visible;
+      animation-play-state: running;
     }
   }
   &.ng-leave {
     animation-name: flipOutX;
+    animation-play-state: paused;
+    &.ng-leave-active {
+      animation-play-state: running;
+    }
   }
 
 }
@@ -48,12 +54,18 @@
   &.ng-enter {
     visibility: hidden;
     animation-name: flipInX;
+    animation-play-state: paused;
     &.ng-enter-active {
       visibility: visible;
+      animation-play-state: running;
     }
   }
   &.ng-leave {
     animation-name: flipOutX;
+    animation-play-state: paused;
+    &.ng-leave-active {
+      animation-play-state: running;
+    }
   }
 
 }

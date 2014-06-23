@@ -21,12 +21,18 @@
   &.ng-enter {
     visibility: hidden;
     animation-name: fadeAndScaleIn;
+    animation-play-state: paused;
     &.ng-enter-active {
       visibility: visible;
+      animation-play-state: running;
     }
   }
   &.ng-leave {
     animation-name: fadeAndScaleOut;
+    animation-play-state: paused;
+    &.ng-leave-active {
+      animation-play-state: running;
+    }
   }
 
 }
