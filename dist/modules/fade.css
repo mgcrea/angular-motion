@@ -1,6 +1,6 @@
 /**
  * angular-motion
- * @version v0.3.2 - 2014-02-11
+ * @version v0.3.3 - 2014-06-23
  * @link https://github.com/mgcrea/angular-motion
  * @author Olivier Louvignes <olivier@mg-crea.com>
  * @license MIT License, http://www.opensource.org/licenses/MIT
@@ -29,13 +29,23 @@
   visibility: hidden;
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
 }
 .am-fade.ng-enter.ng-enter-active {
   visibility: visible;
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
 }
 .am-fade.ng-leave {
   -webkit-animation-name: fadeOut;
   animation-name: fadeOut;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+.am-fade.ng-leave.ng-leave-active {
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
 }
 @-webkit-keyframes fadeIn {
   from {
@@ -74,4 +84,9 @@
   background: rgba(0, 0, 0, 0.5);
   -webkit-animation-duration: 0.15s;
   animation-duration: 0.15s;
+}
+.modal-backdrop.am-fade.ng-leave,
+.aside-backdrop.am-fade.ng-leave {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
 }

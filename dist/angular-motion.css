@@ -1,6 +1,6 @@
 /**
  * angular-motion
- * @version v0.3.2 - 2014-02-11
+ * @version v0.3.3 - 2014-06-23
  * @link https://github.com/mgcrea/angular-motion
  * @author Olivier Louvignes <olivier@mg-crea.com>
  * @license MIT License, http://www.opensource.org/licenses/MIT
@@ -30,13 +30,23 @@
   visibility: hidden;
   -webkit-animation-name: fadeAndScaleIn;
   animation-name: fadeAndScaleIn;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
 }
 .am-fade-and-scale.ng-enter.ng-enter-active {
   visibility: visible;
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
 }
 .am-fade-and-scale.ng-leave {
   -webkit-animation-name: fadeAndScaleOut;
   animation-name: fadeAndScaleOut;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+.am-fade-and-scale.ng-leave.ng-leave-active {
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
 }
 @-webkit-keyframes fadeAndScaleIn {
   from {
@@ -102,13 +112,23 @@
   visibility: hidden;
   -webkit-animation-name: fadeAndSlideFromTop;
   animation-name: fadeAndSlideFromTop;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
 }
 .am-fade-and-slide-top.ng-enter.ng-enter-active {
   visibility: visible;
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
 }
 .am-fade-and-slide-top.ng-leave {
   -webkit-animation-name: fadeAndSlideToTop;
   animation-name: fadeAndSlideToTop;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+.am-fade-and-slide-top.ng-leave.ng-leave-active {
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
 }
 .am-fade-and-slide-right {
   -webkit-animation-duration: 0.3s;
@@ -133,13 +153,23 @@
   visibility: hidden;
   -webkit-animation-name: fadeAndSlideFromRight;
   animation-name: fadeAndSlideFromRight;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
 }
 .am-fade-and-slide-right.ng-enter.ng-enter-active {
   visibility: visible;
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
 }
 .am-fade-and-slide-right.ng-leave {
   -webkit-animation-name: fadeAndSlideToRight;
   animation-name: fadeAndSlideToRight;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+.am-fade-and-slide-right.ng-leave.ng-leave-active {
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
 }
 .am-fade-and-slide-bottom {
   -webkit-animation-duration: 0.3s;
@@ -164,13 +194,23 @@
   visibility: hidden;
   -webkit-animation-name: fadeAndSlideFromBottom;
   animation-name: fadeAndSlideFromBottom;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
 }
 .am-fade-and-slide-bottom.ng-enter.ng-enter-active {
   visibility: visible;
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
 }
 .am-fade-and-slide-bottom.ng-leave {
   -webkit-animation-name: fadeAndSlideToBottom;
   animation-name: fadeAndSlideToBottom;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+.am-fade-and-slide-bottom.ng-leave.ng-leave-active {
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
 }
 .am-fade-and-slide-left {
   -webkit-animation-duration: 0.3s;
@@ -197,13 +237,23 @@
   visibility: hidden;
   -webkit-animation-name: fadeAndSlideFromLeft;
   animation-name: fadeAndSlideFromLeft;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
 }
 .am-fade-and-slide-left.ng-enter.ng-enter-active {
   visibility: visible;
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
 }
 .am-fade-and-slide-left.ng-leave {
   -webkit-animation-name: fadeAndSlideToLeft;
   animation-name: fadeAndSlideToLeft;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+.am-fade-and-slide-left.ng-leave.ng-leave-active {
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
 }
 @-webkit-keyframes fadeAndSlideFromTop {
   from {
@@ -390,13 +440,23 @@
   visibility: hidden;
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
 }
 .am-fade.ng-enter.ng-enter-active {
   visibility: visible;
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
 }
 .am-fade.ng-leave {
   -webkit-animation-name: fadeOut;
   animation-name: fadeOut;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+.am-fade.ng-leave.ng-leave-active {
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
 }
 @-webkit-keyframes fadeIn {
   from {
@@ -436,6 +496,11 @@
   -webkit-animation-duration: 0.15s;
   animation-duration: 0.15s;
 }
+.modal-backdrop.am-fade.ng-leave,
+.aside-backdrop.am-fade.ng-leave {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
 
 .am-flip-x {
   -webkit-animation-duration: 0.4s;
@@ -460,13 +525,23 @@
   visibility: hidden;
   -webkit-animation-name: flipInXBounce;
   animation-name: flipInXBounce;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
 }
 .am-flip-x.ng-enter.ng-enter-active {
   visibility: visible;
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
 }
 .am-flip-x.ng-leave {
   -webkit-animation-name: flipOutX;
   animation-name: flipOutX;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+.am-flip-x.ng-leave.ng-leave-active {
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
 }
 .am-flip-x-linear {
   -webkit-animation-duration: 0.4s;
@@ -491,13 +566,23 @@
   visibility: hidden;
   -webkit-animation-name: flipInX;
   animation-name: flipInX;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
 }
 .am-flip-x-linear.ng-enter.ng-enter-active {
   visibility: visible;
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
 }
 .am-flip-x-linear.ng-leave {
   -webkit-animation-name: flipOutX;
   animation-name: flipOutX;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+.am-flip-x-linear.ng-leave.ng-leave-active {
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
 }
 @-webkit-keyframes flipInX {
   from {
@@ -596,13 +681,13 @@
   -webkit-animation-fill-mode: backwards;
   animation-fill-mode: backwards;
 }
-.am-slide-top.am-fade-and-slide-top-add,
+.am-slide-top.am-slide-top-add,
 .am-slide-top.ng-hide-remove,
 .am-slide-top.ng-move {
   -webkit-animation-name: slideFromTop;
   animation-name: slideFromTop;
 }
-.am-slide-top.am-fade-and-slide-top-remove,
+.am-slide-top.am-slide-top-remove,
 .am-slide-top.ng-hide {
   -webkit-animation-name: slideToTop;
   animation-name: slideToTop;
@@ -611,13 +696,23 @@
   visibility: hidden;
   -webkit-animation-name: slideFromTop;
   animation-name: slideFromTop;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
 }
 .am-slide-top.ng-enter.ng-enter-active {
   visibility: visible;
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
 }
 .am-slide-top.ng-leave {
   -webkit-animation-name: slideToTop;
   animation-name: slideToTop;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+.am-slide-top.ng-leave.ng-leave-active {
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
 }
 .am-slide-right {
   -webkit-animation-duration: 0.3s;
@@ -627,13 +722,13 @@
   -webkit-animation-fill-mode: backwards;
   animation-fill-mode: backwards;
 }
-.am-slide-right.am-fade-and-slide-right-add,
+.am-slide-right.am-slide-right-add,
 .am-slide-right.ng-hide-remove,
 .am-slide-right.ng-move {
   -webkit-animation-name: slideFromRight;
   animation-name: slideFromRight;
 }
-.am-slide-right.am-fade-and-slide-right-remove,
+.am-slide-right.am-slide-right-remove,
 .am-slide-right.ng-hide {
   -webkit-animation-name: slideToRight;
   animation-name: slideToRight;
@@ -642,13 +737,23 @@
   visibility: hidden;
   -webkit-animation-name: slideFromRight;
   animation-name: slideFromRight;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
 }
 .am-slide-right.ng-enter.ng-enter-active {
   visibility: visible;
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
 }
 .am-slide-right.ng-leave {
   -webkit-animation-name: slideToRight;
   animation-name: slideToRight;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+.am-slide-right.ng-leave.ng-leave-active {
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
 }
 .am-slide-bottom {
   -webkit-animation-duration: 0.3s;
@@ -658,13 +763,13 @@
   -webkit-animation-fill-mode: backwards;
   animation-fill-mode: backwards;
 }
-.am-slide-bottom.am-fade-and-slide-bottom-add,
+.am-slide-bottom.am-slide-bottom-add,
 .am-slide-bottom.ng-hide-remove,
 .am-slide-bottom.ng-move {
   -webkit-animation-name: slideFromBottom;
   animation-name: slideFromBottom;
 }
-.am-slide-bottom.am-fade-and-slide-bottom-remove,
+.am-slide-bottom.am-slide-bottom-remove,
 .am-slide-bottom.ng-hide {
   -webkit-animation-name: slideToBottom;
   animation-name: slideToBottom;
@@ -673,13 +778,23 @@
   visibility: hidden;
   -webkit-animation-name: slideFromBottom;
   animation-name: slideFromBottom;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
 }
 .am-slide-bottom.ng-enter.ng-enter-active {
   visibility: visible;
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
 }
 .am-slide-bottom.ng-leave {
   -webkit-animation-name: slideToBottom;
   animation-name: slideToBottom;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+.am-slide-bottom.ng-leave.ng-leave-active {
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
 }
 .am-slide-left {
   -webkit-animation-duration: 0.3s;
@@ -689,13 +804,13 @@
   -webkit-animation-fill-mode: backwards;
   animation-fill-mode: backwards;
 }
-.am-slide-left.am-fade-and-slide-left-add,
+.am-slide-left.am-slide-left-add,
 .am-slide-left.ng-hide-remove,
 .am-slide-left.ng-move {
   -webkit-animation-name: slideFromLeft;
   animation-name: slideFromLeft;
 }
-.am-slide-left.am-fade-and-slide-left-remove,
+.am-slide-left.am-slide-left-remove,
 .am-slide-left.ng-hide {
   -webkit-animation-name: slideToLeft;
   animation-name: slideToLeft;
@@ -704,13 +819,23 @@
   visibility: hidden;
   -webkit-animation-name: slideFromLeft;
   animation-name: slideFromLeft;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
 }
 .am-slide-left.ng-enter.ng-enter-active {
   visibility: visible;
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
 }
 .am-slide-left.ng-leave {
   -webkit-animation-name: slideToLeft;
   animation-name: slideToLeft;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+.am-slide-left.ng-leave.ng-leave-active {
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
 }
 @-webkit-keyframes slideFromTop {
   from {
