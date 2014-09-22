@@ -23,7 +23,7 @@
     }
   ],
   "main": [
-    "dist/angular-motion.min.css"
+    "dist/angular-motion.css"
   ],
   "ignore": [
     "docs",
