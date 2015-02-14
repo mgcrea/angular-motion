@@ -8,4 +8,5 @@ node_modules/
 /pages/
 /docs/
 /test/coverage/
+.idea/
 !.gitignore
