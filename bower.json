@@ -19,7 +19,8 @@
   },
   "licenses": [
     {
-      "type": "MIT"
+      "type": "MIT",
+      "url": "https://github.com/mgcrea/bootstrap-additions/blob/master/LICENSE.md"
     }
   ],
   "main": [
@@ -30,14 +31,9 @@
     "test",
     "CONTRIBUTING.md"
   ],
-  "dependencies": {
-    "angular": "^1.2",
-    "angular-animate": "^1.2"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "bootstrap": "^3.0",
-    "angular-mocks": "^1.2",
-    "angular-strap": "^2.0",
-    "fastclick": "~1.0.3"
+    "angular-animate": "^1.2",
+    "bootstrap": "^3.3.4"
   }
 }
