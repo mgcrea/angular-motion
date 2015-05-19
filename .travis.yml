@@ -21,12 +21,4 @@ before_script:
   - date --rfc-2822
 
 script:
-  - gulp karma:travis~1.2.0
-  - gulp jshint karma:travis
-
-after_script:
-  - cat test/coverage/*/lcov.info | codeclimate
-
-addons:
-  code_climate:
-    repo_token: b5ed978a0e88f95b003a668583ae70815e18cd71019d526023b5e9c7703ec076
+  - gulp build
