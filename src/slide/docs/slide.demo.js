@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('mgcrea.ngStrapDocs')
+angular.module('mgcrea.ngMotionDocs')
 
 .config(function($asideProvider, $modalProvider) {
   angular.extend($modalProvider.defaults, {
