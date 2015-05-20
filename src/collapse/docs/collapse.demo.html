@@ -1,0 +1,39 @@
+<div class="bs-docs-section">
+
+  <div class="page-header">
+    <h1 id="collapse">Collapse <a class="small" href="//github.com/mgcrea/angular-motion/blob/master/src/collapse/collapse.less" target="_blank">collapse.less</a></h1>
+    <code>mgcrea.ngMotion.collapse</code>
+  </div>
+
+  <p>Basic collapse animation that leverages <code>CSS3 keyframes</code>, see <a href="http://caniuse.com/#search=keyframes" target="_blank">browser support</a>.</p>
+  <p>This animation works with <code>opacity</code> animating respectively from <code>0 to 1</code>.</p>
+
+  <h3 id="collapse-examples">Live demo <a class="small edit-plunkr" data-module-name="mgcrea.ngStrapDocs" data-content-html-url="aside/docs/aside.demo.html" data-content-js-url="aside/docs/aside.demo.js" ng-plunkr data-title="edit in plunker" data-placement="right" bs-tooltip></a></h3>
+  <!-- <pre class="bs-example-scope">$scope.aside = {{aside | json}};</pre> -->
+  <div class="bs-example" append-source>
+    <div class="panel-group" role="tablist" aria-multiselectable="true" bs-collapse>
+      <div class="panel panel-default" ng-repeat="panel in panels">
+        <div class="panel-heading" role="tab">
+          <h4 class="panel-title">
+            <a bs-collapse-toggle>
+              {{ panel.title }}
+            </a>
+          </h4>
+        </div>
+        <div class="panel-collapse" role="tabpanel" bs-collapse-target>
+          <div class="panel-body">
+            {{ panel.body }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2 id="collapse-usage">Usage</h2>
+  <p>Append one of theses classes <code>am-collapse</code> to enable theses transitions.</p>
+  <div class="callout callout-info">
+    <h4>AngularStrap integration</h4>
+    <p>You should use the <code>data-animation</code> attribute with AngularStrap.</p>
+  </div>
+
+</div>
