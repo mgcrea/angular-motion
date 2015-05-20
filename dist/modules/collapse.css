@@ -1,6 +1,6 @@
 /**
  * angular-motion
- * @version v0.4.0 - 2015-05-19
+ * @version v0.4.2 - 2015-05-20
  * @link https://github.com/mgcrea/angular-motion
  * @author Olivier Louvignes <olivier@mg-crea.com> (https://github.com/mgcrea)
  * @license MIT License, http://www.opensource.org/licenses/MIT
@@ -12,6 +12,7 @@
           animation-timing-function: ease;
   -webkit-animation-fill-mode: backwards;
           animation-fill-mode: backwards;
+  overflow: hidden;
   opacity: 1;
 }
 .am-collapse.am-collapse-add,
