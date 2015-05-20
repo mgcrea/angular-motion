@@ -1,0 +1,583 @@
+<!doctype html>
+<html class="no-js" lang="en" ng-app="mgcrea.ngMotionDocs">
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>AngularMotion - Fancy CSS3 animations for AngularJS 1.2+.</title>
+  <meta name="description" content="Fancy CSS3 animations for AngularJS 1.2+.">
+
+  <!-- Sets initial viewport load and disables zooming  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <!-- Set a shorter title for iOS6 devices when saved to home screen -->
+  <meta name="apple-mobile-web-app-title" content="AngularMotion">
+
+  <!-- Properties for Google+ snippets -->
+  <meta property="og:title" content="AngularMotion">
+  <meta property="og:description" content="Fancy CSS3 animations for AngularJS 1.2+.">
+  <meta property="og:image" content="http://mgcrea.github.io/angular-motion/static/images/snippet-logo.png">
+
+<!--[if lt IE 9]>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/4.0.3/es5-shim.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+<![endif]-->
+
+  <link rel="author" href="https://plus.google.com/103156582871250188205">
+  <link rel="icon" href="http://angularjs.org/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://angularjs.org/favicon.ico" type="image/x-icon">
+
+  <!-- bower:css -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/fontawesome/4.3.0/css/font-awesome.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/highlight.js/8.5.0/styles/default.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles/libs.min.css">
+  <!-- endinject -->
+  <link rel="stylesheet" href="bower_components/highlightjs/styles/github.css">
+
+  <!-- inject:css -->
+  <link rel="stylesheet" href="styles/docs.min.css">
+  <!-- endinject -->
+
+  <!-- source:css -->
+  <link rel="stylesheet" href="dist/angular-motion.min.css">
+  <!-- endinject -->
+
+</head>
+
+<body ontouchstart="" ng-controller="MainCtrl">
+
+  <div>
+<!-- ngInclude: 'views/partials/navbar.html' -->
+<header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-template="views/partials/aside.tpl.html" data-animation="am-fade-and-slide-left" data-placement="left" title="Menu" data-container="body" bs-aside="">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="./" class="navbar-brand">AngularMotion</a>
+    </div>
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+<!--         <li>
+          <a href="./getting-started">Getting started</a>
+        </li> -->
+        <li>
+          <a href="#directives">Animations</a>
+        </li>
+<!--         <li>
+          <a href="./customize">Customize</a>
+        </li> -->
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+<!--         <li>
+          <a href="./about">About</a>
+        </li> -->
+        <li>
+          <a class="github-badge" href="//travis-ci.org/mgcrea/angular-motion" target="_blank">
+            <img src="//img.shields.io/travis/mgcrea/angular-motion/master.svg?style=flat">
+          </a>
+        </li>
+<!--         <li>
+          <a class="github-badge" href="//codeclimate.com/github/mgcrea/angular-motion" target="_blank">
+            <img src="//img.shields.io/codeclimate/coverage/github/mgcrea/angular-motion.svg?style=flat"/>
+          </a>
+        </li> -->
+        <li>
+          <a href="//github.com/mgcrea/angular-motion" target="_blank">
+            <i class="fa fa-github"></i>&#xA0;GitHub
+            <!-- <img src="//badge.fury.io/bo/angular-motion.png"/> -->
+          </a>
+        </li>
+        <!-- <li class="muted">·</li> -->
+        <li>
+          <a href="//github.com/mgcrea/angular-motion/releases" target="_blank">
+            <i class="fa fa-download"></i>&#xA0;<span ng-bind="version"></span>
+            <!-- <img src="//badge.fury.io/bo/angular-motion.png"/> -->
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<!--/ngInclude: 'views/partials/navbar.html' -->
+</div>
+  <div>
+<!-- ngInclude: 'views/partials/header.html' -->
+<div class="bs-header" id="content">
+  <div class="container">
+    <div class="col-md-9">
+      <h1>AngularMotion</h1>
+      <p>Fancy CSS3 animations for AngularJS 1.2+.</p>
+    </div>
+    <div class="bs-docs-social col-md-3">
+      <ul>
+        <li class="github-btn">
+          <iframe src="http://ghbtns.com/github-btn.html?user=mgcrea&amp;repo=angular-motion&amp;type=star&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+        </li>
+        <li class="github-btn">
+          <iframe src="http://ghbtns.com/github-btn.html?user=mgcrea&amp;repo=angular-motion&amp;type=fork&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+        </li>
+        <li class="github-btn">
+          <iframe src="http://ghbtns.com/github-btn.html?user=mgcrea&amp;type=follow&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="160" height="20"></iframe>
+        </li>
+        <li class="twitter-btn">
+          <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://mgcrea.github.io/angular-motion" data-text="AngularStrap - AngularJS 1.2+ directives for Twitter Bootstrap 3." data-related="olouv"></a>
+        </li>
+        <li>
+          <div class="g-plusone" data-size="medium" data-href="http://mgcrea.github.io/angular-motion"></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!--/ngInclude: 'views/partials/header.html' -->
+</div>
+  <div>
+<!-- ngInclude: 'views/home.html' -->
+<div class="container bs-docs-container">
+  <div class="row">
+    <div class="col-md-3 hidden-sm hidden-xs">
+      <div>
+<!-- ngInclude: 'views/partials/affixed-sidebar.html' -->
+<div class="bs-sidebar hidden-print" role="complementary" data-offset-top="-100" bs-affix="" bs-scrollspy-list="">
+  <ul class="nav bs-sidenav">
+    <li>
+      <a href="#getting-started">Getting started</a>
+    </li>
+    <hr style="margin: 2px 0;">
+    <li>
+      <a href="#fade">Fade</a>
+      <ul class="nav">
+        <li><a href="#fade-examples">Examples</a></li>
+        <li><a href="#fade-usage">Usage</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#slide">Slide</a>
+      <ul class="nav">
+        <li><a href="#slide-examples">Examples</a></li>
+        <li><a href="#slide-usage">Usage</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#collapse">Collapse</a>
+      <ul class="nav">
+        <li><a href="#collapse-examples">Examples</a></li>
+        <li><a href="#collapse-usage">Usage</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#fade-and-slide">FadeAndSlide</a>
+      <ul class="nav">
+        <li><a href="#fade-and-slide-examples">Examples</a></li>
+        <li><a href="#fade-and-slide-usage">Usage</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#fade-and-scale">FadeAndScale</a>
+      <ul class="nav">
+        <li><a href="#fade-and-scale-examples">Examples</a></li>
+        <li><a href="#fade-and-scale-usage">Usage</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#flip">Flip</a>
+      <ul class="nav">
+        <li><a href="#flip-examples">Examples</a></li>
+        <li><a href="#flip-usage">Usage</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!--/ngInclude: 'views/partials/affixed-sidebar.html' -->
+</div>
+    </div>
+    <div class="col-md-9">
+      <div>
+<!-- ngInclude: 'views/sections/getting-started.html' -->
+<div class="bs-docs-section">
+
+  <div class="page-header">
+    <h1 id="getting-started">Getting started <a class="small" href="//github.com/mgcrea/angular-motion/blob/master/README.md" target="_blank">readme.md</a>
+    </h1>
+    <code>mgcrea.ngMotion</code>
+  </div>
+
+  <div class="callout callout-info">
+    <h4 id="project-history">About the project</h4>
+    <p>AngularMotion is an animation starter-kit built for AngularJS#^1.2.</p>
+    <p>Wt&apos;s a spin off from AngularStrap v2 release work.</p>
+  </div>
+
+  <h2 id="project-quickstart">Quick Start</h2>
+  <p>Install and manage AngularMotion with <a href="http://bower.io">Bower</a>.
+  <div class="highlight">
+    <pre>
+      <code class="bash" highlight-block="">
+        $ bower install angular-motion --save
+      </code>
+    </pre>
+  </div>
+
+  </p><p>Load the required javascript libraries.</p>
+  <div class="highlight">
+    <pre>
+      <code class="html" highlight-block="">
+        &lt;script src=&quot;//ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;//ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-animate.min.js&quot;&gt;&lt;/script&gt;
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;bower_components/angular-motion/dist/angular-motion.min.css&quot;&gt;
+      </code>
+    </pre>
+  </div>
+
+  <div class="callout callout-info">
+    <h4>Custom builds</h4>
+    <p>AngularMotion provides independently built modules that can be loaded separately</p>
+    <div class="highlight">
+      <pre>
+        <code class="html" highlight-block="">
+          &lt;link rel=&quot;stylesheet&quot; href=&quot;bower_components/angular-motion/dist/modules/collapse.min.css&quot;&gt;
+        </code>
+      </pre>
+    </div>
+  </div>
+
+  <h2 id="project-contribute">Contribute</h2>
+  <p>Build and work on AngularMotion with <a href="http://gulpjs.com">Gulp</a>.</p>
+  <div class="highlight">
+    <pre>
+      <code class="bash" highlight-block="">
+        // Serve and watch docs, ideal to hack!
+        $ gulp serve
+        // Build AngularMotion
+        $ gulp build
+      </code>
+    </pre>
+  </div>
+
+</div>
+<!--/ngInclude: 'views/sections/getting-started.html' -->
+</div>
+      <div id="animations">
+        <div>
+<!-- ngInclude: 'fade/docs/fade.demo.html' -->
+<div class="bs-docs-section">
+
+  <div class="page-header">
+    <h1 id="fade">Fade <a class="small" href="//github.com/mgcrea/angular-strap/blob/master/src/fade/fade.less" target="_blank">fade.less</a></h1>
+    <code>mgcrea.ngMotion.fade</code>
+  </div>
+
+  <p>Basic fade animation that leverages <code>CSS3 keyframes</code>, see <a href="http://caniuse.com/#search=keyframes" target="_blank">browser support</a>.</p>
+  <p>This animation works with <code>opacity</code> animating respectively from <code>0 to 1</code>.</p>
+
+  <h3 id="fade-examples">Live demo <a class="small edit-plunkr" data-module-name="mgcrea.ngStrapDocs" data-content-html-url="aside/docs/aside.demo.html" data-content-js-url="aside/docs/aside.demo.js" ng-plunkr="" data-title="edit in plunker" data-placement="right" bs-tooltip=""></a></h3>
+  <!-- <pre class="bs-example-scope">$scope.aside = {{aside | json}};</pre> -->
+  <div class="bs-example" append-source="">
+
+    <h5>fade</h5>
+
+    <button type="button" class="btn btn-primary" data-animation="am-fade" data-placement="left" bs-popover="popover">popover from left<br><small>(am-fade)</small></button>
+
+    <button type="button" class="btn btn-success" data-animation="am-fade" data-placement="right" bs-popover="popover">popover from right<br><small>(am-fade)</small></button><br><br>
+
+    <button type="button" class="btn btn-primary" data-animation="am-fade" data-placement="top" bs-tooltip="tooltip">tooltip from top<br><small>(am-fade)</small></button>
+
+    <button type="button" class="btn btn-success" data-animation="am-fade" data-placement="bottom" bs-tooltip="tooltip">tooltip from bottom<br><small>(am-fade)</small></button>
+
+  </div>
+
+
+  <h2 id="fade-usage">Usage</h2>
+  <p>Append one of theses classes <code>am-fade</code> to enable theses transitions.</p>
+  <div class="callout callout-info">
+    <h4>AngularStrap integration</h4>
+    <p>You should use the <code>data-animation</code> attribute with AngularStrap.</p>
+  </div>
+
+</div>
+<!--/ngInclude: 'fade/docs/fade.demo.html' -->
+</div>
+        <div>
+<!-- ngInclude: 'slide/docs/slide.demo.html' -->
+<div class="bs-docs-section">
+
+  <div class="page-header">
+    <h1 id="slide">Slide <a class="small" href="//github.com/mgcrea/angular-strap/blob/master/src/slide/slide.less" target="_blank">slide.less</a>
+    </h1>
+    <code>mgcrea.ngMotion.slide</code>
+  </div>
+
+  <p>Basic slide animation that leverages <code>CSS3 keyframes</code>, see <a href="http://caniuse.com/#search=keyframes" target="_blank">browser support</a>.</p>
+  <p>This animation works with <code>translateX/Y</code> animating from <code>0% to 100%</code>.</p>
+
+  <h3 id="slide-examples">Live demo <a class="small edit-plunkr" data-module-name="mgcrea.ngStrapDocs" data-content-html-url="aside/docs/aside.demo.html" data-content-js-url="aside/docs/aside.demo.js" ng-plunkr="" data-title="edit in plunker" data-placement="right" bs-tooltip=""></a></h3>
+  <!-- <pre class="bs-example-scope">$scope.aside = {{aside | json}};</pre> -->
+  <div class="bs-example" append-source="">
+
+    <h5>slide</h5>
+
+    <button type="button" class="btn btn-primary" data-animation="am-slide-left" data-placement="left" bs-aside="aside">aside from left<br><small>(slide-left)</small></button>
+
+    <button type="button" class="btn btn-success" data-animation="am-slide-right" data-placement="right" bs-aside="aside">aside from right<br><small>(slide-right)</small></button>
+
+    <button type="button" class="btn btn-primary" data-animation="am-slide-top" bs-modal="modal">modal from top<br><small>(am-slide-top)</small></button>
+
+    <button type="button" class="btn btn-success" data-animation="am-slide-bottom" data-placement="center" bs-modal="modal">modal from bottom<br><small>(am-slide-bottom)</small></button>
+
+  </div>
+
+
+  <h2 id="slide-usage">Usage</h2>
+  <p>Append one of theses classes <code>am-slide-top</code>, <code>am-slide-right</code>, <code>am-slide-bottom</code>, <code>am-slide-left</code> to enable theses transitions, </p>
+  <div class="callout callout-info">
+    <h4>AngularStrap integration</h4>
+    <p>You should use the <code>data-animation</code> attribute with AngularStrap.</p>
+  </div>
+
+</div>
+<!--/ngInclude: 'slide/docs/slide.demo.html' -->
+</div>
+        <div>
+<!-- ngInclude: 'collapse/docs/collapse.demo.html' -->
+<div class="bs-docs-section">
+
+  <div class="page-header">
+    <h1 id="collapse">Collapse <a class="small" href="//github.com/mgcrea/angular-motion/blob/master/src/collapse/collapse.less" target="_blank">collapse.less</a></h1>
+    <code>mgcrea.ngMotion.collapse</code>
+  </div>
+
+  <p>Basic collapse animation that leverages <code>CSS3 keyframes</code>, see <a href="http://caniuse.com/#search=keyframes" target="_blank">browser support</a>.</p>
+  <p>This animation works with <code>opacity</code> animating respectively from <code>0 to 1</code>.</p>
+
+  <h3 id="collapse-examples">Live demo <a class="small edit-plunkr" data-module-name="mgcrea.ngStrapDocs" data-content-html-url="aside/docs/aside.demo.html" data-content-js-url="aside/docs/aside.demo.js" ng-plunkr="" data-title="edit in plunker" data-placement="right" bs-tooltip=""></a></h3>
+  <!-- <pre class="bs-example-scope">$scope.aside = {{aside | json}};</pre> -->
+  <div class="bs-example" append-source="">
+    <div class="panel-group" role="tablist" aria-multiselectable="true" bs-collapse="">
+      <div class="panel panel-default" ng-repeat="panel in panels">
+        <div class="panel-heading" role="tab">
+          <h4 class="panel-title">
+            <a bs-collapse-toggle="">
+              {{ panel.title }}
+            </a>
+          </h4>
+        </div>
+        <div class="panel-collapse" role="tabpanel" bs-collapse-target="">
+          <div class="panel-body">
+            {{ panel.body }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2 id="collapse-usage">Usage</h2>
+  <p>Append one of theses classes <code>am-collapse</code> to enable theses transitions.</p>
+  <div class="callout callout-info">
+    <h4>AngularStrap integration</h4>
+    <p>You should use the <code>data-animation</code> attribute with AngularStrap.</p>
+  </div>
+
+</div>
+<!--/ngInclude: 'collapse/docs/collapse.demo.html' -->
+</div>
+        <div>
+<!-- ngInclude: 'fade-and-slide/docs/fade-and-slide.demo.html' -->
+<div class="bs-docs-section">
+
+  <div class="page-header">
+    <h1 id="fade-and-slide">FadeAndSlide <a class="small" href="//github.com/mgcrea/angular-strap/blob/master/src/fade-and-slide/fade-and-slide.less" target="_blank">fade-and-slide.less</a></h1>
+    <code>mgcrea.ngMotion.fade-and-slide</code>
+  </div>
+
+  <p>Fancy slide animation that leverages <code>CSS3 keyframes</code>, see <a href="http://caniuse.com/#search=keyframes" target="_blank">browser support</a>.</p>
+  <p>This animation works with <code>translateX/Y, opacity</code> animating respectively from <code>0% to 20%, 0 to 1</code>.</p>
+
+  <h3 id="fade-and-slide-examples">Live demo <a class="small edit-plunkr" data-module-name="mgcrea.ngStrapDocs" data-content-html-url="aside/docs/aside.demo.html" data-content-js-url="aside/docs/aside.demo.js" ng-plunkr="" data-title="edit in plunker" data-placement="right" bs-tooltip=""></a></h3>
+  <!-- <pre class="bs-example-scope">$scope.aside = {{aside | json}};</pre> -->
+  <div class="bs-example" append-source="">
+
+    <h5>fade-and-slide</h5>
+
+    <button type="button" class="btn btn-primary" data-animation="am-fade-and-slide-left" data-placement="left" bs-aside="aside">aside from left<br><small>(am-fade-and-slide-left)</small></button>
+
+    <button type="button" class="btn btn-success" data-animation="am-fade-and-slide-right" data-placement="right" bs-aside="aside">aside from right<br><small>(am-fade-and-slide-right)</small></button><br><br>
+
+    <button type="button" class="btn btn-primary" data-animation="am-fade-and-slide-top" bs-modal="modal">modal from top<br><small>(am-fade-and-slide-top)</small></button>
+
+    <button type="button" class="btn btn-success" data-animation="am-fade-and-slide-bottom" data-placement="center" bs-modal="modal">modal from bottom<br><small>(am-fade-and-slide-bottom)</small></button>
+
+  </div>
+
+
+  <h2 id="fade-and-slide-usage">Usage</h2>
+  <p>Append one of theses classes <code>am-fade-and-slide-top</code>, <code>am-fade-and-slide-right</code>, <code>am-fade-and-slide-bottom</code>, <code>am-fade-and-slide-left</code> to enable theses transitions.</p>
+  <div class="callout callout-info">
+    <h4>AngularStrap integration</h4>
+    <p>You should use the <code>data-animation</code> attribute with AngularStrap.</p>
+  </div>
+
+</div>
+<!--/ngInclude: 'fade-and-slide/docs/fade-and-slide.demo.html' -->
+</div>
+        <div>
+<!-- ngInclude: 'fade-and-scale/docs/fade-and-scale.demo.html' -->
+<div class="bs-docs-section">
+
+  <div class="page-header">
+    <h1 id="fade-and-scale">FadeAndScale <a class="small" href="//github.com/mgcrea/angular-strap/blob/master/src/fade-and-scale/fade-and-scale.less" target="_blank">fade-and-scale.less</a></h1>
+    <code>mgcrea.ngMotion.fade-and-scale</code>
+  </div>
+
+  <p>Fancy scale animation that leverages <code>CSS3 keyframes</code>, see <a href="http://caniuse.com/#search=keyframes" target="_blank">browser support</a>.</p>
+  <p>This animation works with <code>scale, opacity</code> animating respectively from <code>.7 to 1, 0 to 1</code>.</p>
+
+  <h3 id="fade-and-scale-examples">Live demo <a class="small edit-plunkr" data-module-name="mgcrea.ngStrapDocs" data-content-html-url="aside/docs/aside.demo.html" data-content-js-url="aside/docs/aside.demo.js" ng-plunkr="" data-title="edit in plunker" data-placement="right" bs-tooltip=""></a></h3>
+  <!-- <pre class="bs-example-scope">$scope.aside = {{aside | json}};</pre> -->
+  <div class="bs-example" append-source="">
+
+    <h5>fade-and-scale</h5>
+
+    <button type="button" class="btn btn-danger" data-animation="am-fade-and-scale" data-placement="center" bs-modal="modal">modal from center<br><small>(am-fade-and-scale)</small></button>
+
+  </div>
+
+
+  <h2 id="fade-and-scale-usage">Usage</h2>
+  <p>Append one of theses classes <code>am-fade-and-scale</code> to enable theses transitions.</p>
+  <div class="callout callout-info">
+    <h4>AngularStrap integration</h4>
+    <p>You should use the <code>data-animation</code> attribute with AngularStrap.</p>
+  </div>
+
+</div>
+<!--/ngInclude: 'fade-and-scale/docs/fade-and-scale.demo.html' -->
+</div>
+        <div>
+<!-- ngInclude: 'flip/docs/flip.demo.html' -->
+<div class="bs-docs-section">
+
+  <div class="page-header">
+    <h1 id="flip">FadeAndScale <a class="small" href="//github.com/mgcrea/angular-strap/blob/master/src/flip/flip.less" target="_blank">flip.less</a></h1>
+    <code>mgcrea.ngMotion.flip</code>
+  </div>
+
+  <p>Fancy flip animation that leverages <code>CSS3 keyframes</code>, see <a href="http://caniuse.com/#search=keyframes" target="_blank">browser support</a>.</p>
+  <p>This animation works with <code>perspective, rotate</code> animating respectively from <code>to 400px, 90 to 0</code>.</p>
+
+  <h3 id="flip-examples">Live demo <a class="small edit-plunkr" data-module-name="mgcrea.ngStrapDocs" data-content-html-url="aside/docs/aside.demo.html" data-content-js-url="aside/docs/aside.demo.js" ng-plunkr="" data-title="edit in plunker" data-placement="right" bs-tooltip=""></a></h3>
+  <!-- <pre class="bs-example-scope">$scope.aside = {{aside | json}};</pre> -->
+  <div class="bs-example" append-source="">
+
+    <h5>flip</h5>
+
+    <button type="button" class="btn btn-primary" data-animation="am-flip-x" data-placement="bottom" bs-popover="popover">popover from bottom<br><small>(am-flip-x)</small></button>
+
+    <button type="button" class="btn btn-success" data-animation="am-flip-x" data-placement="center" bs-modal="modal">modal from center<br><small>(am-flip-x)</small></button>
+
+  </div>
+
+
+  <h2 id="flip-usage">Usage</h2>
+  <p>Append one of theses classes <code>am-flip-x</code> to enable theses transitions.</p>
+  <div class="callout callout-info">
+    <h4>AngularStrap integration</h4>
+    <p>You should use the <code>data-animation</code> attribute with AngularStrap.</p>
+  </div>
+
+</div>
+<!--/ngInclude: 'flip/docs/flip.demo.html' -->
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/ngInclude: 'views/home.html' -->
+</div>
+  <div>
+<!-- ngInclude: 'views/partials/footer.html' -->
+<footer class="bs-footer">
+  <div class="container">
+    <p class="pull-right"><a href="#">Back to top</a>
+    </p>
+    <p>Designed and built by <a href="//plus.google.com/+OlivierLouvignes/posts?rel=author" target="_blank">Olivier Louvignes</a>.
+      <a href="https://twitter.com/olouv" class="twitter-follow-button" data-show-count="true" data-lang="en">Follow @olouv</a>
+    </p>
+    <hr>
+    <p>Using <a href="http://twitter.github.com/bootstrap" target="_blank">Twitter Bootstrap</a> and the <a href="css/docs.css" target="_blank">Bootstrap&apos;s docs styles</a> designed and built by <a href="http://twitter.com/mdo" target="_blank">@mdo</a> and <a href="http://twitter.com/fat" target="_blank">@fat</a>.</p>
+    <p>Code licensed under <a href="//github.com/mgcrea/angular-motion/blob/master/LICENSE.md" target="_blank">The MIT License</a>, documentation under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+    <ul class="footer-links">
+      <li><a href="https://github.com/mgcrea/angular-motion/issues?state=open">Issues</a>
+      </li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="https://github.com/mgcrea/angular-motion/wiki">Roadmap and changelog</a>
+      </li>
+      <li class="muted">&#xB7;</li>
+      <li><a href="https://github.com/mgcrea/angular-motion/releases">Releases</a>
+      </li>
+    </ul>
+  </div>
+</footer>
+<!--/ngInclude: 'views/partials/footer.html' -->
+</div>
+
+  <!-- bower:js -->
+  <script src="//cdn.jsdelivr.net/angularjs/1.3.15/angular.min.js"></script>
+  <script src="//cdn.jsdelivr.net/angularjs/1.3.15/angular-animate.min.js"></script>
+  <script src="//cdn.jsdelivr.net/angularjs/1.3.15/angular-route.min.js"></script>
+  <script src="//cdn.jsdelivr.net/highlight.js/8.5.0/highlight.min.js"></script>
+  <script src="scripts/libs.min.js"></script>
+  <!-- endinject -->
+
+  <!-- source:js -->
+  <!-- endinject -->
+
+  <!-- inject:js -->
+  <script src="scripts/docs.min.js"></script>
+  <!-- endinject -->
+
+  <!-- source-docs:js -->
+  <script src="dist/angular-motion.docs.min.js"></script>
+  <!-- endinject -->
+
+  <!-- views:js -->
+  <script src="scripts/views.tpl.min.js"></script>
+  <!-- endinject -->
+
+  <!-- Analytics
+  ================================================== -->
+
+  <script type="text/javascript">
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-1813303-11', 'mgcrea.github.io');
+    ga('send', 'pageview');
+
+  </script>
+
+  <!-- Socials
+  ================================================== -->
+
+  <script type="text/javascript">
+    (function() {
+      var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+      po.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    })();
+  </script>
+
+  <script>
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+  </script>
+
+</body>
+
+</html>
