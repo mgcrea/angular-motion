@@ -13,10 +13,10 @@
   overflow: hidden;
   opacity: 1;
 
-  &.am-collapse-add, &.ng-hide-remove, &.ng-move  {
+  &.in-add, &.am-collapse-add, &.ng-hide-remove, &.ng-move  {
     animation-name: expand;
   }
-  &.am-collapse-remove, &.ng-hide {
+  &.in-remove, &.am-collapse-remove, &.ng-hide {
     animation-name: collapse;
   }
 
@@ -59,23 +59,4 @@
   to {
     max-height: 0px;
   }
-}
-
-// Bootstrap 3
-//
-
-.panel-collapse {
-
-  &.am-collapse {
-
-    &.in-remove {
-      animation-name: collapse;
-      display: block;
-    }
-    &.in-add {
-      animation-name: expand;
-    }
-
-  }
-
 }
