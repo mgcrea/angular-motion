@@ -78,16 +78,46 @@
 
 }
 
-.modal-backdrop, .aside-backdrop {
+// Modal backdrop, uses bootstrap's color, same duration, opacity
 
-  &.am-fade {
+.modal-backdrop.am-fade,
+.aside-backdrop.am-fade {
+  animation-duration: .15s;
+  animation-timing-function: @fade-timing-function;
+  animation-fill-mode: backwards;
+  opacity: .5;
 
-    background: rgba(0, 0, 0, .5);
-    animation-duration: @fade-duration / 2;
-    &.ng-leave {
-      animation-delay: @fade-duration;
+  &.ng-enter {
+    visibility: hidden;
+    animation-name: modalBackdropFadeIn;
+    animation-play-state: paused;
+    &.ng-enter-active {
+      visibility: visible;
+      animation-play-state: running;
     }
-
   }
+  &.ng-leave {
+    animation-name: modalBackdropFadeOut;
+    animation-play-state: paused;
+    &.ng-leave-active {
+      animation-play-state: running;
+    }
+  }
+}
 
+@keyframes modalBackdropFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: .5;
+  }
+}
+@keyframes modalBackdropFadeOut {
+  from {
+    opacity: .5;
+  }
+  to {
+    opacity: 0;
+  }
 }
