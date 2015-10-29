@@ -30,9 +30,6 @@
     "ng-factory": "^1.0",
     "undertaker-lib-tasks": "^0.4.1"
   },
-  "engines": {
-    "node": "^0.10"
-  },
   "scripts": {
     "test": "gulp build"
   }
