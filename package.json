@@ -1,12 +1,13 @@
 {
   "name": "angular-motion",
-  "description": "AngularMotion - Fancy CSS3 animations for AngularJS 1.2+",
+  "description": "AngularMotion - Fancy CSS3 animations for AngularJS",
   "version": "0.4.3",
   "keywords": [
     "angular",
     "animation"
   ],
-  "homepage": "https://github.com/mgcrea/angular-motion",
+  "main": "dist/angular-motion.css",
+  "homepage": "http://mgcrea.github.io/angular-motion",
   "bugs": "https://github.com/mgcrea/angular-motion/issues",
   "author": {
     "name": "Olivier Louvignes",
@@ -17,23 +18,18 @@
     "type": "git",
     "url": "https://github.com/mgcrea/angular-motion.git"
   },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/mgcrea/bootstrap-additions/blob/master/LICENSE.md"
-    }
-  ],
+  "license": "MIT",
   "dependencies": {},
   "devDependencies": {
-    "factory-angular-channels": "^0.8.3",
-    "gulp": "gulpjs/gulp#4.0",
-    "ng-factory": "^1.0",
-    "undertaker-lib-tasks": "^0.4.1"
-  },
-  "engines": {
-    "node": "^0.10"
+    "factory-angular-channels": "^0.10.0",
+    "gulp-pre": "^4.0.0-alpha.4",
+    "ng-factory": "^1.1",
+    "undertaker-lib-tasks": "^0.5.3"
   },
   "scripts": {
-    "test": "gulp build"
+    "start": "gulp serve",
+    "test": "npm run test-eslint && gulp karma:unit",
+    "test-eslint": "eslint src/*/*.js",
+    "test:watch": "npm run test -- -w"
   }
 }
