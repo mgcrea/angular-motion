@@ -1,7 +1,7 @@
 /**
  * angular-motion
- * @version v0.4.2 - 2015-09-23
- * @link https://github.com/mgcrea/angular-motion
+ * @version v0.4.4 - 2016-03-31
+ * @link http://mgcrea.github.io/angular-motion
  * @author Olivier Louvignes <olivier@mg-crea.com> (https://github.com/mgcrea)
  * @license MIT License, http://www.opensource.org/licenses/MIT
  */
@@ -176,11 +176,6 @@
   background: rgba(0, 0, 0, 0.5);
   -webkit-animation-duration: 0.15s;
           animation-duration: 0.15s;
-}
-.modal-backdrop.am-fade.ng-leave,
-.aside-backdrop.am-fade.ng-leave {
-  -webkit-animation-delay: 0.3s;
-          animation-delay: 0.3s;
 }
 
 .am-fade-and-scale {
